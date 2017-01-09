@@ -1,0 +1,37 @@
+{
+	"id": "790765ca-f316-8517-f907-9b142f04ace8",
+	"name": "Business",
+	"description": "API Endpoints for Business ",
+	"order": [
+		"233c884d-21bc-5040-9cb3-2d1867345447"
+	],
+	"folders": [],
+	"timestamp": 1483960693661,
+	"owner": "1089014",
+	"public": false,
+	"requests": [
+		{
+			"id": "233c884d-21bc-5040-9cb3-2d1867345447",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "https://api.sminq.com/v1/business/queue/calendar?date=&queueId=2&type=live",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Body matches string\"] = responseBody.has(\"Dr. Nema\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1483963971248,
+			"name": "GET Business Queue Appointments",
+			"description": "",
+			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
+			"responses": []
+		}
+	]
+}
