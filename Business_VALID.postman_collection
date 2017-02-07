@@ -44,13 +44,13 @@
 		{
 			"id": "233c884d-21bc-5040-9cb3-2d1867345447",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "https://api.sminq.com/v1/business/queue/calendar?date=&queueId=2&type=live",
+			"url": "http://staging.api.sminq.com:8888/v1/business/queue/calendar?date=&queueId=1&type=live",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
 			"data": null,
 			"dataMode": "params",
-			"tests": "tests[\"Business Name is\"] = responseBody.has(\"Dr. Nema\");\n\ntests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"GET Request is successful\"] = responseBody.has(\"true\");",
+			"tests": "tests[\"Business Calendar successful\"] = responseBody.has(\"businessName\");\n\ntests[\"Queue Calendar successful\"] = responseBody.has(\"queueName\");\n\ntests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"GET Request is successful\"] = responseBody.has(\"true\");",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
@@ -58,7 +58,7 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
-			"time": 1483982629910,
+			"time": 1486472560447,
 			"name": "GET Business Queue Appointments",
 			"description": "",
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
