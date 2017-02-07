@@ -13,6 +13,8 @@
 		"a470a995-2e23-f372-f973-6973a9d30943",
 		"233c884d-21bc-5040-9cb3-2d1867345447",
 		"42282ddd-5bca-fcaa-1e87-56c12dedc71f",
+		"5c1f09ba-64b8-f0b4-09e5-2c2719e11361",
+		"62399890-6c5e-2dbc-2423-a46f3d3c9506",
 		"0214ce02-e556-4b0b-56da-5f594f3a81ac",
 		"406650fd-0008-471e-a4c9-0c1a1c87a51c",
 		"a86973bd-8ed6-8fec-2135-a5b6c0a83c1a",
@@ -187,6 +189,30 @@
 			"rawModeData": "{\n\t\"mobile\": \"9393939393\",\n\t\"optEnabled\": 1,\n\t\"password\": \"989898\"\n}"
 		},
 		{
+			"id": "5c1f09ba-64b8-f0b4-09e5-2c2719e11361",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/business/queue/slots/update",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Update Timeslots\"] = responseBody.has(\"slotStatus\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486475791964,
+			"name": "POST Update Timeslots",
+			"description": "",
+			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
+			"responses": [],
+			"rawModeData": "{\n\t\"startTimeSlot\":\"20:30:00\",\n\t\"endTimeSlot\":\"20:30:00\",\n\t\"tokenUpperLimit\":0,\n\t\"queueId\":13,\n\t\"updateAction\":\"status\",\n\t\"slotStatus\":0,\n\t\"date\":\"2017-02-07\",\n\t\"endDate\":\"2017-02-07\"\n\t\n}"
+		},
+		{
 			"id": "5e830f4f-7599-1062-6425-97364e20ff96",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
 			"url": "http://staging.api.sminq.com:8888/v1/business/login",
@@ -209,6 +235,29 @@
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
 			"responses": [],
 			"rawModeData": "{\n\t\"mobile\": \"9393939393\",\n\t\"isSmsOtp\": 1,\n\t\"pin\": null\n}"
+		},
+		{
+			"id": "62399890-6c5e-2dbc-2423-a46f3d3c9506",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://staging.api.sminq.com:8888/v1/appointment/slots?date=2017-02-07&queueId=13",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Body contains total Slots count\"] = responseBody.has(\"totalSlots\");\n\ntests[\"Body contains used Slots count\"] = responseBody.has(\"usedSlots\");\n\ntests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486475883406,
+			"name": "GET Timeslots",
+			"description": "",
+			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
+			"responses": []
 		},
 		{
 			"id": "85539a6c-c1fc-83c0-8367-d3321599a08e",
