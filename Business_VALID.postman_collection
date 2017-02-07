@@ -8,7 +8,10 @@
 		"0214ce02-e556-4b0b-56da-5f594f3a81ac",
 		"406650fd-0008-471e-a4c9-0c1a1c87a51c",
 		"a86973bd-8ed6-8fec-2135-a5b6c0a83c1a",
-		"f2adb63a-988b-7727-b79a-41fb53f98b0f"
+		"f2adb63a-988b-7727-b79a-41fb53f98b0f",
+		"5e830f4f-7599-1062-6425-97364e20ff96",
+		"45b25d6f-3eea-a934-85b7-c8c6cf542dd0",
+		"c5cb88f5-a1fe-20a6-1643-1de9477b5fc5"
 	],
 	"folders": [],
 	"timestamp": 1483960693661,
@@ -18,7 +21,7 @@
 		{
 			"id": "0214ce02-e556-4b0b-56da-5f594f3a81ac",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "http://staging.api.sminq.com:8080/v1/user/appointment/status?tokenId=409985",
+			"url": "http://staging.api.sminq.com:8888/v1/user/appointment/status?tokenId=409985",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -32,7 +35,7 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
-			"time": 1483983155097,
+			"time": 1486468931953,
 			"name": "GET Token Status",
 			"description": "",
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
@@ -41,7 +44,7 @@
 		{
 			"id": "233c884d-21bc-5040-9cb3-2d1867345447",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "http://staging.api.sminq.com:8080/v1/business/queue/calendar?date=&queueId=2&type=live",
+			"url": "https://api.sminq.com/v1/business/queue/calendar?date=&queueId=2&type=live",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -64,7 +67,7 @@
 		{
 			"id": "406650fd-0008-471e-a4c9-0c1a1c87a51c",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "http://staging.api.sminq.com:8080/v1/business/user/search?type=mobile&value=9096553317",
+			"url": "http://staging.api.sminq.com:8888/v1/business/user/search?type=mobile&value=9096553317",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -78,16 +81,64 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
-			"time": 1483983481925,
+			"time": 1486468893483,
 			"name": "GET User Details",
 			"description": "",
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
 			"responses": []
 		},
 		{
+			"id": "45b25d6f-3eea-a934-85b7-c8c6cf542dd0",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/business/verify",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Body contains Business Data\"] = responseBody.has(\"business\");\n\ntests[\"Body contains Business Id\"] = responseBody.has(\"businessId\");\n\ntests[\"Body contains Business Name\"] = responseBody.has(\"businessName\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486468686315,
+			"name": "POST Login Verify",
+			"description": "",
+			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
+			"responses": [],
+			"rawModeData": "{\n\t\"mobile\": \"9393939393\",\n\t\"optEnabled\": 1,\n\t\"password\": \"989898\"\n}"
+		},
+		{
+			"id": "5e830f4f-7599-1062-6425-97364e20ff96",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/business/login",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Login\"] = responseBody.has(\"pinSet\");\n",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486468489137,
+			"name": "POST Login",
+			"description": "",
+			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
+			"responses": [],
+			"rawModeData": "{\n\t\"mobile\": \"9393939393\",\n\t\"isSmsOtp\": 1,\n\t\"pin\": null\n}"
+		},
+		{
 			"id": "a470a995-2e23-f372-f973-6973a9d30943",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "http://staging.api.sminq.com:8080/v1/business/queue/status?queueId=2",
+			"url": "http://staging.api.sminq.com:8888/v1/business/queue/status?queueId=1",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -101,7 +152,7 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
-			"time": 1483983118772,
+			"time": 1486469003828,
 			"name": "GET Queue Status",
 			"description": "",
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
@@ -110,7 +161,7 @@
 		{
 			"id": "a86973bd-8ed6-8fec-2135-a5b6c0a83c1a",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8080/v1/appointment/create",
+			"url": "http://staging.api.sminq.com:8888/v1/appointment/create",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "PUT",
@@ -124,17 +175,41 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
-			"time": 1485773997152,
+			"time": 1486468874314,
 			"name": "PUT Create Appointment",
 			"description": "",
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
 			"responses": [],
-			"rawModeData": "{\n  \"tokenQueueId\":2,\n  \"joinDate\":\"2017-01-30\",\n  \"userName\":\"SMINQ Test\",\n  \"userMobile\":\"9096553317\",\n  \"businessApp\":1,\n  \"appType\":2,\n  \"tokenUserId\":56714,\n  \"joinTime\":\"13:30:00\"\n}"
+			"rawModeData": "{\n  \"tokenQueueId\":1,\n  \"joinDate\":\"2017-01-30\",\n  \"userName\":\"SMINQ Test\",\n  \"userMobile\":\"9096553317\",\n  \"businessApp\":1,\n  \"appType\":2,\n  \"tokenUserId\":56714,\n  \"joinTime\":\"13:30:00\"\n}"
+		},
+		{
+			"id": "c5cb88f5-a1fe-20a6-1643-1de9477b5fc5",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/business/pin/generate",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Mobile number\"] = responseBody.has(\"mobile\");\n\ntests[\"Successful PIN generated\"] = responseBody.has(\"pin\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486472374563,
+			"name": "POST Create PIN",
+			"description": "",
+			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
+			"responses": [],
+			"rawModeData": "{\n\t\"mobile\": \"9393939393\",\n\t\"pin\": \"1111\"\n}"
 		},
 		{
 			"id": "f2adb63a-988b-7727-b79a-41fb53f98b0f",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "http//staging.api.sminq.com:8080/v1/business/reports/summary?date=2017-01-09&queueId=2",
+			"url": "http://staging.api.sminq.com:8888/v1/business/reports/summary?date=2017-01-09&queueId=1",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -148,7 +223,7 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
-			"time": 1483984799003,
+			"time": 1486468796876,
 			"name": "GET Appointments Summary",
 			"description": "",
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
