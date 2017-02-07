@@ -21,6 +21,8 @@
 		"a86973bd-8ed6-8fec-2135-a5b6c0a83c1a",
 		"0214ce02-e556-4b0b-56da-5f594f3a81ac",
 		"73ec3d4e-ef4d-f242-3f81-dcdae5f2e676",
+		"db857486-7711-f051-2337-27a79203121f",
+		"3d82155c-6174-7aca-e1bd-2472122d9369",
 		"406650fd-0008-471e-a4c9-0c1a1c87a51c",
 		"f2adb63a-988b-7727-b79a-41fb53f98b0f"
 	],
@@ -32,13 +34,13 @@
 		{
 			"id": "0214ce02-e556-4b0b-56da-5f594f3a81ac",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "http://staging.api.sminq.com:8888/v1/user/appointment/status?tokenId=21615",
+			"url": "http://staging.api.sminq.com:8888/v1/user/appointment/status?tokenId=21617",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
 			"data": null,
 			"dataMode": "params",
-			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Token Id queried is present\"] = responseBody.has(\"21615\");\n\ntests[\"Body contains Token Status\"] = responseBody.has(\"T_\");",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Token Id queried is present\"] = responseBody.has(\"21617\");\n\ntests[\"Body contains Token Status\"] = responseBody.has(\"T_\");",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
@@ -46,7 +48,7 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
-			"time": 1486477396278,
+			"time": 1486477779381,
 			"name": "GET Token Status",
 			"description": "",
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8"
@@ -145,6 +147,30 @@
 			},
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
 			"rawModeData": "{\n  \"queueId\": 13,\n  \"statusType\": \"Q_OPEN\"\n}"
+		},
+		{
+			"id": "3d82155c-6174-7aca-e1bd-2472122d9369",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com/v1/appointment/status/all",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Closed Tokens\"] = responseBody.has(\"T_CLOSE\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486478233172,
+			"name": "POST Change Status of Group Tokens",
+			"description": "",
+			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
+			"responses": [],
+			"rawModeData": "{\n\t\"queueId\":15,\n\t\"statusType\":\"T_CLOSE\",\n\t\"date\": \"2017-02-07\",\n\t\"reason\": \"\"\n}"
 		},
 		{
 			"folder": null,
@@ -379,11 +405,11 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
-			"time": 1486477364927,
+			"time": 1486477752612,
 			"name": "PUT Create Appointment",
 			"description": "",
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
-			"rawModeData": "{\n\t\"tokenQueueId\":13,\n\t\"joinDate\":\"2017-02-07\",\n\t\"userName\":\"Karuna\",\n\t\"userMobile\":\"9096553317\",\n\t\"businessApp\":1,\n\t\"appType\":2,\n\t\"tokenUserId\":7219,\n\t\"joinTime\":\"21:30:00\"\n\t\n}"
+			"rawModeData": "{\n\t\"tokenQueueId\":15,\n\t\"joinDate\":\"2017-02-07\",\n\t\"userName\":\"Karuna\",\n\t\"userMobile\":\"9096553317\",\n\t\"businessApp\":1,\n\t\"appType\":2,\n\t\"tokenUserId\":7219,\n\t\"joinTime\":\"21:30:00\"\n\t\n}"
 		},
 		{
 			"folder": null,
@@ -455,6 +481,31 @@
 			"description": "",
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
 			"rawModeData": "{\n\t\"id\":568,\n\t\"queueId\":\"13\",\n\t\"message\":\"test\",\n\t\"liveDate\":\"2017-02-07\",\n\t\"endDate\":\"2017-02-07\",\n\t\"startTime\":null,\n\t\"endTime\":null,\n\t\"status\":1,\n\t\"stopQueue\":0,\n\t\"allDay\":1\n}"
+		},
+		{
+			"id": "db857486-7711-f051-2337-27a79203121f",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com/v1/appointment/status",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful token status change\"] = responseBody.has(\"T_PROCESS\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486478109250,
+			"name": "PUT Change Status of Token",
+			"description": "",
+			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
+			"responses": [],
+			"rawModeData": "{\n\t\"queueId\":15,\n\t\"tokenId\":21617,\n\t\"statusType\":\"T_PROCESS\",\n\t\"reason\":\"\",\n\t\"slotAllotted\":\"01:00:00 - 23:00:00\"\n\t\n}"
 		},
 		{
 			"folder": null,
