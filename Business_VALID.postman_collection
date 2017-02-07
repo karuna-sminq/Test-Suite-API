@@ -18,7 +18,7 @@
 		{
 			"id": "0214ce02-e556-4b0b-56da-5f594f3a81ac",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "https://api.sminq.com/v1/user/appointment/status?tokenId=409985",
+			"url": "http://staging.api.sminq.com:8080/v1/user/appointment/status?tokenId=409985",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -41,7 +41,7 @@
 		{
 			"id": "233c884d-21bc-5040-9cb3-2d1867345447",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "https://api.sminq.com/v1/business/queue/calendar?date=&queueId=2&type=live",
+			"url": "http://staging.api.sminq.com:8080/v1/business/queue/calendar?date=&queueId=2&type=live",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -64,7 +64,7 @@
 		{
 			"id": "406650fd-0008-471e-a4c9-0c1a1c87a51c",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "https://api.sminq.com/v1/business/user/search?type=mobile&value=9096553317",
+			"url": "http://staging.api.sminq.com:8080/v1/business/user/search?type=mobile&value=9096553317",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -87,7 +87,7 @@
 		{
 			"id": "a470a995-2e23-f372-f973-6973a9d30943",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "https://api.sminq.com/v1/business/queue/status?queueId=2",
+			"url": "http://staging.api.sminq.com:8080/v1/business/queue/status?queueId=2",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -110,7 +110,7 @@
 		{
 			"id": "a86973bd-8ed6-8fec-2135-a5b6c0a83c1a",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "https://api.sminq.com/v1/appointment/create",
+			"url": "http://staging.api.sminq.com:8080/v1/appointment/create",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "PUT",
@@ -124,17 +124,17 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
-			"time": 1483984197615,
+			"time": 1485773997152,
 			"name": "PUT Create Appointment",
 			"description": "",
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
 			"responses": [],
-			"rawModeData": "{\n  \"tokenQueueId\":2,\n  \"joinDate\":\"2017-01-10\",\n  \"userName\":\"SMINQ Test\",\n  \"userMobile\":\"9096553317\",\n  \"businessApp\":1,\n  \"appType\":2,\n  \"tokenUserId\":56714,\n  \"joinTime\":\"13:30:00\"\n}"
+			"rawModeData": "{\n  \"tokenQueueId\":2,\n  \"joinDate\":\"2017-01-30\",\n  \"userName\":\"SMINQ Test\",\n  \"userMobile\":\"9096553317\",\n  \"businessApp\":1,\n  \"appType\":2,\n  \"tokenUserId\":56714,\n  \"joinTime\":\"13:30:00\"\n}"
 		},
 		{
 			"id": "f2adb63a-988b-7727-b79a-41fb53f98b0f",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "https://api.sminq.com/v1/business/reports/summary?date=2017-01-09&queueId=2",
+			"url": "http//staging.api.sminq.com:8080/v1/business/reports/summary?date=2017-01-09&queueId=2",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
