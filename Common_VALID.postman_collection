@@ -1,0 +1,40 @@
+{
+	"id": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+	"name": "Common_VALID",
+	"description": "",
+	"order": [
+		"22a565f5-2c2e-4b71-843a-bac2624b4c23"
+	],
+	"folders": [],
+	"timestamp": 1486563614393,
+	"owner": "1089014",
+	"public": false,
+	"requests": [
+		{
+			"id": "22a565f5-2c2e-4b71-843a-bac2624b4c23",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://api.sminq.com/v1/appointment/reschedule",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"data": [],
+			"dataMode": "raw",
+			"name": "POST Reschedule Appointment",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1486563614393,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"rawModeData": "{\n\t\n}"
+		}
+	]
+}
