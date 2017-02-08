@@ -23,8 +23,11 @@
 		"73ec3d4e-ef4d-f242-3f81-dcdae5f2e676",
 		"db857486-7711-f051-2337-27a79203121f",
 		"3d82155c-6174-7aca-e1bd-2472122d9369",
-		"406650fd-0008-471e-a4c9-0c1a1c87a51c",
-		"f2adb63a-988b-7727-b79a-41fb53f98b0f"
+		"f2adb63a-988b-7727-b79a-41fb53f98b0f",
+		"3699ea06-c9d1-c3fa-e952-60f757282010",
+		"e7d5c480-151f-43c6-7d64-5b956577f46f",
+		"a3503793-c855-c331-7dff-97b508fcc2e3",
+		"406650fd-0008-471e-a4c9-0c1a1c87a51c"
 	],
 	"folders": [],
 	"timestamp": 1483960693661,
@@ -125,6 +128,31 @@
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8"
 		},
 		{
+			"id": "3699ea06-c9d1-c3fa-e952-60f757282010",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://staging.api.sminq.com:8888/v1/business/reports/appointments?fromDate=2017-02-07&queueId=13&toDate=2017-02-08",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
+			"data": null,
+			"dataMode": "params",
+			"name": "GET Appointment Report",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1486534254263,
+			"version": 2,
+			"responses": [],
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Business Reports for Queue Id\"] = responseBody.has(\"queueId\");\n\ntests[\"Successful Business Reports for Token Id\"] = responseBody.has(\"tokenId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			}
+		},
+		{
 			"folder": null,
 			"id": "37e1dd8c-978e-b8a7-dad6-3839fbba203c",
 			"name": "POST Queue Status",
@@ -173,20 +201,15 @@
 			"rawModeData": "{\n\t\"queueId\":15,\n\t\"statusType\":\"T_CLOSE\",\n\t\"date\": \"2017-02-07\",\n\t\"reason\": \"\"\n}"
 		},
 		{
-			"folder": null,
 			"id": "406650fd-0008-471e-a4c9-0c1a1c87a51c",
-			"name": "GET User Details",
-			"dataMode": "params",
-			"data": null,
-			"rawModeData": null,
-			"descriptionFormat": "html",
-			"description": "",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"method": "GET",
-			"pathVariables": {},
 			"url": "http://staging.api.sminq.com:8888/v1/business/user/search?type=mobile&value=9096553317",
 			"preRequestScript": null,
-			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Body contains Mobile number\"] = responseBody.has(\"9096553317\");\n\ntests[\"Body contains User Name\"] = responseBody.has(\"SMINQ Test\");",
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Body contains Mobile number\"] = responseBody.has(\"9096553317\");\n\ntests[\"Body contains User Name\"] = responseBody.has(\"Karuna\");",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
@@ -194,6 +217,9 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
+			"time": 1486534761785,
+			"name": "GET Search User",
+			"description": "",
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8"
 		},
 		{
@@ -365,6 +391,30 @@
 			"rawModeData": "{\n  \"businessId\": \"14\",\n  \"deviceType\": \"android\"\n}"
 		},
 		{
+			"id": "a3503793-c855-c331-7dff-97b508fcc2e3",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/profile/8078",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Updated User\"] = responseBody.has(\"userName\");\n\ntests[\"Successful Updated User Name\"] = responseBody.has(\"QA 123 Updated\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486535496293,
+			"name": "POST Update User",
+			"description": "",
+			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
+			"responses": [],
+			"rawModeData": "{\n\t\"userName\": \"QA 123 Updated\",\n\t\"userMobile\": \"1111110000\",\n\t\"userVerified\": 1,\n\t\"isBusinessOwner\": 0,\n\t\"userCityId\": 1\n}"
+		},
+		{
 			"folder": null,
 			"id": "a470a995-2e23-f372-f973-6973a9d30943",
 			"name": "GET Queue Status",
@@ -508,6 +558,32 @@
 			"rawModeData": "{\n\t\"queueId\":15,\n\t\"tokenId\":21617,\n\t\"statusType\":\"T_PROCESS\",\n\t\"reason\":\"\",\n\t\"slotAllotted\":\"01:00:00 - 23:00:00\"\n\t\n}"
 		},
 		{
+			"id": "e7d5c480-151f-43c6-7d64-5b956577f46f",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/business/user",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8",
+			"data": [],
+			"dataMode": "raw",
+			"name": "POST Add User",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1486535098984,
+			"version": 2,
+			"responses": [],
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Added User\"] = responseBody.has(\"userId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"rawModeData": "{\n\t\"userName\": \"QA 123\",\n\t\"userMobile\": \"1111110000\",\n\t\"userVerified\": 1,\n\t\"isBusinessOwner\": 0,\n\t\"userCityId\": 1\n}"
+		},
+		{
 			"folder": null,
 			"id": "ea430be4-459b-aa2c-16e5-5bd6e6841e71",
 			"name": "POST Device Unregister",
@@ -532,20 +608,15 @@
 			"rawModeData": "{\n  \"businessId\": \"14\",\n  \"deviceType\": \"android\"\n}"
 		},
 		{
-			"folder": null,
 			"id": "f2adb63a-988b-7727-b79a-41fb53f98b0f",
-			"name": "GET Appointments Summary",
-			"dataMode": "params",
-			"data": null,
-			"rawModeData": null,
-			"descriptionFormat": "html",
-			"description": "",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"method": "GET",
-			"pathVariables": {},
-			"url": "http://staging.api.sminq.com:8888/v1/business/reports/summary?date=2017-01-09&queueId=1",
+			"url": "http://staging.api.sminq.com:8888/v1/business/reports/summary?date=2017-01-09&queueId=13",
 			"preRequestScript": null,
-			"tests": "tests[\"Body contains Closed count\"] = responseBody.has(\"totalClosed\");\n\ntests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Body contains Cancelled count\"] = responseBody.has(\"totalCancelled\");\n\ntests[\"Body contains Total count\"] = responseBody.has(\"totalTokens\");\n\ntests[\"Body contains Present count\"] = responseBody.has(\"totalPresent\");\n\ntests[\"Body contains Absent count\"] = responseBody.has(\"totalAbsent\");\n\ntests[\"Body contains Cash count\"] = responseBody.has(\"totalCash\");\n\ntests[\"Body contains Online count\"] = responseBody.has(\"totalOnline\");",
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Body contains Closed count\"] = responseBody.has(\"totalClosed\");\n\ntests[\"Body contains Cancelled count\"] = responseBody.has(\"totalCancelled\");\n\ntests[\"Body contains Total count\"] = responseBody.has(\"totalTokens\");\n\ntests[\"Body contains Present count\"] = responseBody.has(\"totalPresent\");\n\ntests[\"Body contains Absent count\"] = responseBody.has(\"totalAbsent\");\n\ntests[\"Body contains Cash count\"] = responseBody.has(\"totalCash\");\n\ntests[\"Body contains Online count\"] = responseBody.has(\"totalOnline\");",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
@@ -553,6 +624,9 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
+			"time": 1486534015241,
+			"name": "GET Appointments Summary",
+			"description": "",
 			"collectionId": "790765ca-f316-8517-f907-9b142f04ace8"
 		}
 	]
