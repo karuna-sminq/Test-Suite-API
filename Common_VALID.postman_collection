@@ -13,20 +13,14 @@
 		{
 			"id": "22a565f5-2c2e-4b71-843a-bac2624b4c23",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://api.sminq.com/v1/appointment/reschedule",
-			"pathVariables": {},
+			"url": "http://staging.api.sminq.com:8888/v1/appointment/reschedule",
 			"preRequestScript": null,
+			"pathVariables": {},
 			"method": "POST",
-			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
 			"data": [],
 			"dataMode": "raw",
-			"name": "POST Reschedule Appointment",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1486563614393,
 			"version": 2,
-			"responses": [],
-			"tests": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Reschedule\"] = responseBody.has(\"tokenId\");",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
@@ -34,7 +28,12 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
-			"rawModeData": "{\n\t\n}"
+			"time": 1486648489550,
+			"name": "POST Reschedule Appointment",
+			"description": "",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"responses": [],
+			"rawModeData": "{\n\t\"queueId\":15,\n\t\"joinDate\":\"2017-02-09\",\n\t\"appType\":2,\n\t\"tokenId\":21862,\n\t\"joinTime\":\"21:30:00\"\n}"
 		}
 	]
 }
