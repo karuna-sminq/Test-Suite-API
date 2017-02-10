@@ -14,7 +14,8 @@
 		"1871bd23-fafc-a676-d178-605559c3616b",
 		"b465ce29-35e0-5c8b-c05f-3356913e53f7",
 		"2bfc553f-5de6-8c0f-3596-431e61193c29",
-		"5b1ee7de-cf99-90c1-7548-c47b29660176"
+		"5b1ee7de-cf99-90c1-7548-c47b29660176",
+		"6044fde8-2649-5e28-74b1-ce74db50dfbe"
 	],
 	"folders": [],
 	"timestamp": 1486563614393,
@@ -204,6 +205,29 @@
 			},
 			"time": 1486721981086,
 			"name": "GET City Locations",
+			"description": "",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"responses": []
+		},
+		{
+			"id": "6044fde8-2649-5e28-74b1-ce74db50dfbe",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://staging.api.sminq.com:8888/v1/app/config?env=userapp&version=1.9&device=android",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Has force update feature\"] = responseBody.has(\"forceUpdate\");\n\ntests[\"Has force logout feature\"] = responseBody.has(\"forceLogout\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486722154123,
+			"name": "GET App Config",
 			"description": "",
 			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
 			"responses": []
