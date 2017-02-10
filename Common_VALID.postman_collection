@@ -7,7 +7,10 @@
 		"cce136a6-5988-4567-7ef0-aca9d60b5dcd",
 		"85f36d8d-fc12-a3dd-5568-ab1cce81b178",
 		"15ba0257-e614-cab5-0297-333a219c7671",
-		"2eb461a0-aff2-3830-f742-dca532a6cb41"
+		"2eb461a0-aff2-3830-f742-dca532a6cb41",
+		"d2c34ed8-142b-e0a0-0665-8df2c77bdf23",
+		"284c2f63-c254-0644-1c0f-ecef587c239e",
+		"44915097-a0f0-3fd0-4ede-ad185696e6e2"
 	],
 	"folders": [],
 	"timestamp": 1486563614393,
@@ -63,6 +66,29 @@
 			"rawModeData": "{\n\t\"queueId\":15,\n\t\"joinDate\":\"2017-02-09\",\n\t\"appType\":2,\n\t\"tokenId\":21862,\n\t\"joinTime\":\"21:30:00\"\n}"
 		},
 		{
+			"id": "284c2f63-c254-0644-1c0f-ecef587c239e",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://staging.api.sminq.com:8888/v1/appointment/search?queueId=13&tokenId=21851",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Token Details - Queue Name Search\"] = responseBody.has(\"queueName\");\n\ntests[\"Successful Token Details - Token Id Search\"] = responseBody.has(\"tokenId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486720583893,
+			"name": "GET Appointment Search",
+			"description": "",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"responses": []
+		},
+		{
 			"id": "2eb461a0-aff2-3830-f742-dca532a6cb41",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
 			"url": "http://api.sminq.com/v1/appointment/slots?queueId=13&date=2017-02-10",
@@ -84,6 +110,30 @@
 			"description": "",
 			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
 			"responses": []
+		},
+		{
+			"id": "44915097-a0f0-3fd0-4ede-ad185696e6e2",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/appointment/confirmation?tokenId=21868&queueId=13&statusType=T_PRESENT",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Appointment Confirmation\"] = responseBody.has(\"statusType\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486721028395,
+			"name": "GET Appointment Confirmation",
+			"description": "",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"responses": [],
+			"rawModeData": "{\n\t\n}"
 		},
 		{
 			"id": "85f36d8d-fc12-a3dd-5568-ab1cce81b178",
@@ -132,6 +182,29 @@
 			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
 			"responses": [],
 			"rawModeData": "{\n\t\"queueId\": 13,\n\t\"tokenId\": 21851,\n\t\"statusType\": \"T_PRESENT\"\t\n}"
+		},
+		{
+			"id": "d2c34ed8-142b-e0a0-0665-8df2c77bdf23",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://staging.api.sminq.com:8888/v1/appointment/groups?queueId=13&date=2017-02-10",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful retrieval of group-wise startTime\"] = responseBody.has(\"groupStartTime\");\n\ntests[\"Successful retrieval of group-wise endTime\"] = responseBody.has(\"groupEndTime\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486719953225,
+			"name": "GET ALL Queue Timeslots (Group-wise)",
+			"description": "",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"responses": []
 		}
 	]
 }
