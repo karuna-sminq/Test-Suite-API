@@ -3,7 +3,9 @@
 	"name": "Common_VALID",
 	"description": "",
 	"order": [
-		"22a565f5-2c2e-4b71-843a-bac2624b4c23"
+		"22a565f5-2c2e-4b71-843a-bac2624b4c23",
+		"cce136a6-5988-4567-7ef0-aca9d60b5dcd",
+		"85f36d8d-fc12-a3dd-5568-ab1cce81b178"
 	],
 	"folders": [],
 	"timestamp": 1486563614393,
@@ -28,12 +30,60 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
-			"time": 1486648489550,
+			"time": 1486652304310,
 			"name": "POST Reschedule Appointment",
 			"description": "",
 			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
 			"responses": [],
 			"rawModeData": "{\n\t\"queueId\":15,\n\t\"joinDate\":\"2017-02-09\",\n\t\"appType\":2,\n\t\"tokenId\":21862,\n\t\"joinTime\":\"21:30:00\"\n}"
+		},
+		{
+			"id": "85f36d8d-fc12-a3dd-5568-ab1cce81b178",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/appointment/details",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful token comment added\"] = responseBody.has(\"comment\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486719200716,
+			"name": "POST Add Token Metadata",
+			"description": "",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"responses": [],
+			"rawModeData": "{\n\t\"tokenId\": 21851,\n\t\"comment\": \"test details\"\n}"
+		},
+		{
+			"id": "cce136a6-5988-4567-7ef0-aca9d60b5dcd",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/appointment/status",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful TokenId\"] = responseBody.has(\"tokenId\");\n\ntests[\"Successful Token status change\"] = responseBody.has(\"tokenStatusId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486718651430,
+			"name": "PUT Change Token Status",
+			"description": "",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"responses": [],
+			"rawModeData": "{\n\t\"queueId\": 13,\n\t\"tokenId\": 21851,\n\t\"statusType\": \"T_PRESENT\"\t\n}"
 		}
 	]
 }
