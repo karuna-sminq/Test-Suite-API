@@ -10,7 +10,11 @@
 		"2eb461a0-aff2-3830-f742-dca532a6cb41",
 		"d2c34ed8-142b-e0a0-0665-8df2c77bdf23",
 		"284c2f63-c254-0644-1c0f-ecef587c239e",
-		"44915097-a0f0-3fd0-4ede-ad185696e6e2"
+		"44915097-a0f0-3fd0-4ede-ad185696e6e2",
+		"1871bd23-fafc-a676-d178-605559c3616b",
+		"b465ce29-35e0-5c8b-c05f-3356913e53f7",
+		"2bfc553f-5de6-8c0f-3596-431e61193c29",
+		"5b1ee7de-cf99-90c1-7548-c47b29660176"
 	],
 	"folders": [],
 	"timestamp": 1486563614393,
@@ -36,6 +40,29 @@
 			},
 			"time": 1486719450550,
 			"name": "GET ALL Queue Timeslots",
+			"description": "",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"responses": []
+		},
+		{
+			"id": "1871bd23-fafc-a676-d178-605559c3616b",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://staging.api.sminq.com:8888/v1/business/category?cityName=Pune",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Retrieval of verticals\"] = responseBody.has(\"verticalType\");\n\ntests[\"Successful Retrieval of verticals according to city\"] = responseBody.has(\"cityId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486721507921,
+			"name": "GET City Categories",
 			"description": "",
 			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
 			"responses": []
@@ -89,6 +116,29 @@
 			"responses": []
 		},
 		{
+			"id": "2bfc553f-5de6-8c0f-3596-431e61193c29",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://staging.api.sminq.com:8888/v1/city/languages?cityId=1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Languages\"] = responseBody.has(\"languageName\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486721920916,
+			"name": "GET City Languages",
+			"description": "",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"responses": []
+		},
+		{
 			"id": "2eb461a0-aff2-3830-f742-dca532a6cb41",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
 			"url": "http://api.sminq.com/v1/appointment/slots?queueId=13&date=2017-02-10",
@@ -114,10 +164,10 @@
 		{
 			"id": "44915097-a0f0-3fd0-4ede-ad185696e6e2",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/appointment/confirmation?tokenId=21868&queueId=13&statusType=T_PRESENT",
+			"url": "http://staging.api.sminq.com:8888/v1/appointment/confirmation",
 			"preRequestScript": null,
 			"pathVariables": {},
-			"method": "GET",
+			"method": "POST",
 			"data": [],
 			"dataMode": "raw",
 			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Appointment Confirmation\"] = responseBody.has(\"statusType\");",
@@ -128,12 +178,35 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
-			"time": 1486721028395,
-			"name": "GET Appointment Confirmation",
+			"time": 1486721379786,
+			"name": "POST Appointment Confirmation",
 			"description": "",
 			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
 			"responses": [],
-			"rawModeData": "{\n\t\n}"
+			"rawModeData": "{\n\t\"tokenId\": 21868,\n\t\"queueId\": 13,\n\t\"statusType\": \"T_PRESENT\"\n}"
+		},
+		{
+			"id": "5b1ee7de-cf99-90c1-7548-c47b29660176",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://staging.api.sminq.com:8888/v1/city/location?cityName=Pune",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Locations\"] = responseBody.has(\"locationName\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486721981086,
+			"name": "GET City Locations",
+			"description": "",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"responses": []
 		},
 		{
 			"id": "85f36d8d-fc12-a3dd-5568-ab1cce81b178",
@@ -158,6 +231,29 @@
 			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
 			"responses": [],
 			"rawModeData": "{\n\t\"tokenId\": 21851,\n\t\"comment\": \"test details\"\n}"
+		},
+		{
+			"id": "b465ce29-35e0-5c8b-c05f-3356913e53f7",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nX-Vertical-Type: clinic\n",
+			"url": "http://staging.api.sminq.com:8888/v1/business/category/tags",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Tags\"] = responseBody.has(\"tagName\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486721892439,
+			"name": "GET Vertical Tags",
+			"description": "",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"responses": []
 		},
 		{
 			"id": "cce136a6-5988-4567-7ef0-aca9d60b5dcd",
