@@ -5,13 +5,38 @@
 	"order": [
 		"22a565f5-2c2e-4b71-843a-bac2624b4c23",
 		"cce136a6-5988-4567-7ef0-aca9d60b5dcd",
-		"85f36d8d-fc12-a3dd-5568-ab1cce81b178"
+		"85f36d8d-fc12-a3dd-5568-ab1cce81b178",
+		"15ba0257-e614-cab5-0297-333a219c7671",
+		"2eb461a0-aff2-3830-f742-dca532a6cb41"
 	],
 	"folders": [],
 	"timestamp": 1486563614393,
 	"owner": "1089014",
 	"public": false,
 	"requests": [
+		{
+			"id": "15ba0257-e614-cab5-0297-333a219c7671",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://api.sminq.com/v1/appointment/slots/select?queueId=13&date=2017-02-10",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful retrieval of start time of slot\"] = responseBody.has(\"startTimeSlot\");\n\ntests[\"Successful retrieval of end time of slot\"] = responseBody.has(\"endTimeSlot\");\n\ntests[\"Successful retrieval of status of slot\"] = responseBody.has(\"status\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486719450550,
+			"name": "GET ALL Queue Timeslots",
+			"description": "",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"responses": []
+		},
 		{
 			"id": "22a565f5-2c2e-4b71-843a-bac2624b4c23",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
@@ -36,6 +61,29 @@
 			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
 			"responses": [],
 			"rawModeData": "{\n\t\"queueId\":15,\n\t\"joinDate\":\"2017-02-09\",\n\t\"appType\":2,\n\t\"tokenId\":21862,\n\t\"joinTime\":\"21:30:00\"\n}"
+		},
+		{
+			"id": "2eb461a0-aff2-3830-f742-dca532a6cb41",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://api.sminq.com/v1/appointment/slots?queueId=13&date=2017-02-10",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful retrieval of full slots\"] = responseBody.has(\"usedSlots\");\n\ntests[\"Successful retrieval of all slots\"] = responseBody.has(\"totalSlots\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486719536867,
+			"name": "GET Available Queue Slots",
+			"description": "",
+			"collectionId": "bebec188-dd4b-60c1-5e01-dacd451bd4d0",
+			"responses": []
 		},
 		{
 			"id": "85f36d8d-fc12-a3dd-5568-ab1cce81b178",
