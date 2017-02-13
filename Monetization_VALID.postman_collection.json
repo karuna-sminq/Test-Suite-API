@@ -1,0 +1,38 @@
+{
+	"id": "28e451b0-7385-fdee-e983-831fdc3d8f6d",
+	"name": "Monetization_VALID",
+	"description": "",
+	"order": [
+		"89f6955c-4982-68d0-0dd4-e30cf22eb76b"
+	],
+	"folders": [],
+	"timestamp": 1486986738191,
+	"owner": "1089014",
+	"public": false,
+	"requests": [
+		{
+			"id": "89f6955c-4982-68d0-0dd4-e30cf22eb76b",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/monetization",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful token creation\"] = responseBody.has(\"tokenId\");\n\ntests[\"Successful monetization plan retrieval\"] = responseBody.has(\"monetizationPlanDetails\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486989325490,
+			"name": "POST Monetization Token Creation",
+			"description": "",
+			"collectionId": "28e451b0-7385-fdee-e983-831fdc3d8f6d",
+			"responses": [],
+			"rawModeData": "{\n\t\"queueId\":1,\n\t\"userId\":7219,\n\t\"joinTime\":\"20:05:00\",\n\t\"joinDate\":\"2017-02-13\",\n\t\"appType\":2,\n\t\"categoryId\": 1,\n\t\"cityId\": 1,\n\t\"countryId\": 1\n}"
+		}
+	]
+}
