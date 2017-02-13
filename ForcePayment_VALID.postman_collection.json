@@ -1,0 +1,89 @@
+{
+	"id": "5ceb7975-57f0-968b-89f4-e64077bff81f",
+	"name": "ForcePayment_VALID",
+	"description": "",
+	"order": [
+		"85a80601-c694-bc58-789c-8b2e72fbfd2e",
+		"77877da7-5441-019d-af6f-67f52fa128fb",
+		"30069eee-1316-a0a9-1294-2b686078e4e6"
+	],
+	"folders": [],
+	"timestamp": 1486992539968,
+	"owner": "1089014",
+	"public": false,
+	"requests": [
+		{
+			"id": "30069eee-1316-a0a9-1294-2b686078e4e6",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/schedule/appointment/cancel",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "5ceb7975-57f0-968b-89f4-e64077bff81f",
+			"data": [],
+			"dataMode": "raw",
+			"name": "POST Cancel Scheduled Slot",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1486993224054,
+			"version": 2,
+			"responses": [],
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Slot scheduled\"] = responseBody.has(\"slotId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"rawModeData": "{\n\t\"queueId\":\"71\",\n\t\"userId\":7219,\n\t\"joinTime\":\"13:30:00\",\n\t\"joinDate\":\"2017-02-14\",\n\t\"slotId\":\"21330\",\n\t\"appType\":4,\n\t\"groupId\":\"null\"\n}"
+		},
+		{
+			"id": "77877da7-5441-019d-af6f-67f52fa128fb",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://staging.api.sminq.com:8888/v1/token/schedule/groups?date=2017-02-14&queueId=71",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Group Start Time\"] = responseBody.has(\"groupStartTime\");\n\ntests[\"Used slots\"] = responseBody.has(\"usedSlots\");\n\ntests[\"Available Slots\"] = responseBody.has(\"totalSlots\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486993166990,
+			"name": "GET Scheduled Slots",
+			"description": "",
+			"collectionId": "5ceb7975-57f0-968b-89f4-e64077bff81f",
+			"responses": []
+		},
+		{
+			"id": "85a80601-c694-bc58-789c-8b2e72fbfd2e",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/schedule/appointment",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Slot scheduled\"] = responseBody.has(\"slotId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1486993073017,
+			"name": "POST Schedule Slot",
+			"description": "",
+			"collectionId": "5ceb7975-57f0-968b-89f4-e64077bff81f",
+			"responses": [],
+			"rawModeData": "{\n\t\"queueId\":\"71\",\n\t\"userId\":7219,\n\t\"joinTime\":\"13:30:00\",\n\t\"joinDate\":\"2017-02-14\",\n\t\"slotId\":\"21330\",\n\t\"appType\":4,\n\t\"groupId\":\"null\"\n}"
+		}
+	]
+}
