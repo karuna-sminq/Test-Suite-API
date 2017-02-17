@@ -2,10 +2,62 @@
 	"id": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
 	"name": "User_VALID",
 	"description": "",
-	"order": [],
+	"order": [
+		"0a0d1c67-5b09-b98a-90f2-58b8e9fee6ce",
+		"f4453566-e6c1-f208-ee81-93d320df8d8c"
+	],
 	"folders": [],
 	"timestamp": 1487308847279,
 	"owner": "1089014",
 	"public": false,
-	"requests": []
+	"requests": [
+		{
+			"id": "0a0d1c67-5b09-b98a-90f2-58b8e9fee6ce",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/login",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Login w/ PIN\"] = responseBody.has(\"userId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487310223535,
+			"name": "POST User Login W/ PIN",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"responses": [],
+			"rawModeData": "{\n\t\"mobile\": 9096553317,\n\t\"pin\": 1111\n}"
+		},
+		{
+			"id": "f4453566-e6c1-f208-ee81-93d320df8d8c",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/login/verify",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Login w/ OTP\"] = responseBody.has(\"userId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487310215881,
+			"name": "POST User Login W/ OTP",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"responses": [],
+			"rawModeData": "{\n\t\"mobile\": 9096553317,\n\t\"password\": 989898\n}"
+		}
+	]
 }
