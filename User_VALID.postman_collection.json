@@ -11,13 +11,42 @@
 		"ac1b1bbd-cdaf-4a7a-9e65-2a8818710e69",
 		"ba912ede-41dd-fab6-4443-f74a8bddbe29",
 		"b7afbf4f-0d41-4f2d-4793-9e86d62d8961",
-		"4fc5b513-64ef-0108-4719-9c634c1a1b2f"
+		"4fc5b513-64ef-0108-4719-9c634c1a1b2f",
+		"94257c04-3fe1-1c46-61eb-cf611a7cc5bc",
+		"5e0d1073-affb-b43e-6ce1-34c2b74f2599",
+		"1b206088-4a2b-bc59-d91a-053464f36989",
+		"c0bfc6c2-8bc1-2e7f-c667-40e7e17bad62",
+		"02edf0eb-cda3-c187-8fc5-ea2efc0fb59c"
 	],
 	"folders": [],
 	"timestamp": 1487308847279,
 	"owner": "1089014",
 	"public": false,
 	"requests": [
+		{
+			"id": "02edf0eb-cda3-c187-8fc5-ea2efc0fb59c",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/member?userId=7219",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Retrieval of Members\"] = responseBody.has(\"groupId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487326949443,
+			"name": "GET All Members",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"Member12\",\n\t\"mobile\": \"1212121212\",\n\t\"status\": 1,\n\t\"password\": \"989898\",\n\t\"userId\": 7219\n}"
+		},
 		{
 			"id": "0a0d1c67-5b09-b98a-90f2-58b8e9fee6ce",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
@@ -67,6 +96,30 @@
 			"rawModeData": "{\n\t\"userName\":\"QA Test T1\",\n\t\"userMobile\":\"0808080808\",\n\t\"userVerified\":1,\n\t\"isBusinessOwner\":0,\n\t\"userCityId\":1\n}"
 		},
 		{
+			"id": "1b206088-4a2b-bc59-d91a-053464f36989",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/member/329",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successfully Updated member\"] = responseBody.has(\"mobile\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487326638061,
+			"name": "POST Update Member",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"Member12\",\n\t\"mobile\": \"1212121212\",\n\t\"status\": 1,\n\t\"groupId\": \"329\",\n\t\"userId\": 7219\n}"
+		},
+		{
 			"id": "396f6d6e-f3a7-c9c0-2ca1-0b3558293900",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
 			"url": " http://staging.api.sminq.com:8888/v1/user/device/register",
@@ -92,7 +145,7 @@
 		{
 			"id": "4fc5b513-64ef-0108-4719-9c634c1a1b2f",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://api.sminq.com/v1/user/pin/generate",
+			"url": "http://staging.api.sminq.com:8888/v1/user/pin/generate",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -106,12 +159,60 @@
 				"password": "admin",
 				"saveToRequest": true
 			},
-			"time": 1487326118541,
+			"time": 1487326181105,
 			"name": "POST User Create PIN",
 			"description": "",
 			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
 			"responses": [],
 			"rawModeData": "{\n\t\"mobile\": 9096553317,\n\t\"pin\": 1111\n}"
+		},
+		{
+			"id": "5e0d1073-affb-b43e-6ce1-34c2b74f2599",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/member/verify",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successfully Verified member\"] = responseBody.has(\"groupId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487326550806,
+			"name": "POST Verify Member",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"Member1\",\n\t\"mobile\": \"1212121212\",\n\t\"status\": 1,\n\t\"password\": \"989898\",\n\t\"userId\": 7219\n}"
+		},
+		{
+			"id": "94257c04-3fe1-1c46-61eb-cf611a7cc5bc",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/member",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successfully Added member\"] = responseBody.has(\"mobile\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487326423956,
+			"name": "POST Add Member",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"Member1\",\n\t\"mobile\": \"1212121212\",\n\t\"userId\": 7219\n}"
 		},
 		{
 			"id": "a8c5d676-6bb7-48f6-473a-a1d0ce274db3",
@@ -207,6 +308,30 @@
 			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
 			"responses": [],
 			"rawModeData": "{\n\t\"userName\": \"Karuna\",\n\t\"userMobile\": \"9096553317\",\n\t\"userCityId\": 1,\n\t\"userId\": 7219\n}"
+		},
+		{
+			"id": "c0bfc6c2-8bc1-2e7f-c667-40e7e17bad62",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/member/verify/329",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successfully Updated member & verified\"] = responseBody.has(\"verified\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487326859899,
+			"name": "POST Update Member Verify",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"Member12\",\n\t\"mobile\": \"1212121212\",\n\t\"status\": 1,\n\t\"password\": \"989898\",\n\t\"userId\": 7219\n}"
 		},
 		{
 			"id": "f4453566-e6c1-f208-ee81-93d320df8d8c",
