@@ -1,0 +1,63 @@
+{
+	"id": "9540192e-0e41-8636-b9f9-3a13cdd9ffd9",
+	"name": "Payments_VALID",
+	"description": "",
+	"order": [
+		"d15416cb-c33a-5485-9490-93df40707bfe",
+		"e5ad38a5-2f0f-121d-0f3f-7dc207f49b56"
+	],
+	"folders": [],
+	"timestamp": 1487329995034,
+	"owner": "1089014",
+	"public": false,
+	"requests": [
+		{
+			"id": "d15416cb-c33a-5485-9490-93df40707bfe",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/business/bill/interim",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Interim Bill amount check\"] = responseBody.has(\"amount\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487330130221,
+			"name": "POST Add Interim Bill",
+			"description": "",
+			"collectionId": "9540192e-0e41-8636-b9f9-3a13cdd9ffd9",
+			"responses": [],
+			"rawModeData": "{\n\t\"tokenId\": \"22670\",\n\t\"amount\": \"10\"\n}"
+		},
+		{
+			"id": "e5ad38a5-2f0f-121d-0f3f-7dc207f49b56",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/business/bill/interim?tokenId=22670",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Interim Bill amount retrieval\"] = responseBody.has(\"interimId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487330185151,
+			"name": "GET Interim Bill",
+			"description": "",
+			"collectionId": "9540192e-0e41-8636-b9f9-3a13cdd9ffd9",
+			"responses": [],
+			"rawModeData": "{\n\t\"tokenId\": \"22670\",\n\t\"amount\": \"10\"\n}"
+		}
+	]
+}
