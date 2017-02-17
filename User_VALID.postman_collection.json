@@ -6,7 +6,9 @@
 		"0a0d1c67-5b09-b98a-90f2-58b8e9fee6ce",
 		"f4453566-e6c1-f208-ee81-93d320df8d8c",
 		"138336be-ec1a-4ea5-3a7c-3fb8a6bacc27",
-		"a8c5d676-6bb7-48f6-473a-a1d0ce274db3"
+		"a8c5d676-6bb7-48f6-473a-a1d0ce274db3",
+		"396f6d6e-f3a7-c9c0-2ca1-0b3558293900",
+		"ac1b1bbd-cdaf-4a7a-9e65-2a8818710e69"
 	],
 	"folders": [],
 	"timestamp": 1487308847279,
@@ -62,6 +64,29 @@
 			"rawModeData": "{\n\t\"userName\":\"QA Test T1\",\n\t\"userMobile\":\"0808080808\",\n\t\"userVerified\":1,\n\t\"isBusinessOwner\":0,\n\t\"userCityId\":1\n}"
 		},
 		{
+			"id": "396f6d6e-f3a7-c9c0-2ca1-0b3558293900",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": " http://staging.api.sminq.com:8888/v1/user/device/register",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Device Registration\"] = responseBody.has(\"deviceStatus\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487324913311,
+			"name": "POST User Device Register",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"rawModeData": "{\n  \"userId\": 7219,\n  \"deviceType\": \"android\"\n}"
+		},
+		{
 			"id": "a8c5d676-6bb7-48f6-473a-a1d0ce274db3",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
 			"url": "http://staging.api.sminq.com:8888/v1/user/verify",
@@ -84,6 +109,29 @@
 			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
 			"responses": [],
 			"rawModeData": "{\n\t\"mobile\": \"0808080808\",\n\t\"password\": \"989898\"\n}"
+		},
+		{
+			"id": "ac1b1bbd-cdaf-4a7a-9e65-2a8818710e69",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/device/unregister",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Device UnRegistration\"] = responseBody.has(\"true\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487324918344,
+			"name": "POST User Device Unregister",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"rawModeData": "{\n  \"userId\": 7219,\n  \"deviceType\": \"android\"\n}"
 		},
 		{
 			"id": "f4453566-e6c1-f208-ee81-93d320df8d8c",
