@@ -9,7 +9,8 @@
 		"1ddb2c7f-a8e1-4d8c-cfb2-699a7704a71e",
 		"fa64df85-d9d1-c991-84b5-0f12b6dadd7b",
 		"b062a827-ea5e-2639-28da-76fd9be05e02",
-		"c31c440d-c53a-de63-81e3-dc2e967271ac"
+		"c31c440d-c53a-de63-81e3-dc2e967271ac",
+		"395e0ffb-6cf9-2764-31cf-b368f6df0f6f"
 	],
 	"folders": [],
 	"timestamp": 1487329995034,
@@ -39,6 +40,30 @@
 			"collectionId": "9540192e-0e41-8636-b9f9-3a13cdd9ffd9",
 			"responses": [],
 			"rawModeData": "{\n\t\"queueId\": 1,\n\t\"tokenId\": 22670,\n\t\"billingType\": 0,\n\t\"customerType\": 1,\n\t\"customerId\": 7219,\n\t\"countryId\": 1,\n\t\"charges\": [\n\t\t{\n\t\t\t\"amount\": 10,\n\t\t\t\"billingHead\": \"business\"\n\t\t}\n\t\t]\n}"
+		},
+		{
+			"id": "395e0ffb-6cf9-2764-31cf-b368f6df0f6f",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/split/payment/link",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Payment Link sent\"] = responseBody.has(\"invoices\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487337060108,
+			"name": "POST Send Split Payment Link",
+			"description": "",
+			"collectionId": "9540192e-0e41-8636-b9f9-3a13cdd9ffd9",
+			"responses": [],
+			"rawModeData": "{\n\t\"queueId\": 1,\n\t\"tokenId\": 22670,\n\t\"customerType\": 1,\n\t\"customerId\": 7219,\n\t\"countryId\": 1,\n\t\"charges\": [\n\t\t{\n\t\t\t\"amount\": 5,\n\t\t\t\"billingHead\": \"business\"\n\t\t}\n\t\t]\n}"
 		},
 		{
 			"id": "89e84770-327d-9930-f6a3-78e7d5e91ba6",
