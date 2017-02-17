@@ -16,7 +16,10 @@
 		"5e0d1073-affb-b43e-6ce1-34c2b74f2599",
 		"1b206088-4a2b-bc59-d91a-053464f36989",
 		"c0bfc6c2-8bc1-2e7f-c667-40e7e17bad62",
-		"02edf0eb-cda3-c187-8fc5-ea2efc0fb59c"
+		"02edf0eb-cda3-c187-8fc5-ea2efc0fb59c",
+		"0c5715b9-23ad-dfb7-9594-e22e0cd88b80",
+		"5f9ef353-7c44-9e3c-7795-ad773d69e484",
+		"9f67a269-6b7a-9ccb-ba7d-0b530f5f4ae9"
 	],
 	"folders": [],
 	"timestamp": 1487308847279,
@@ -70,6 +73,30 @@
 			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
 			"responses": [],
 			"rawModeData": "{\n\t\"mobile\": 9096553317,\n\t\"pin\": 1111\n}"
+		},
+		{
+			"id": "0c5715b9-23ad-dfb7-9594-e22e0cd88b80",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/favorite",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Marking of Bookmarks\"] = responseBody.has(\"queueId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487327558902,
+			"name": "POST Add Bookmark",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"responses": [],
+			"rawModeData": "{\n\t\"queueId\": 1,\n\t\"userId\": 7219,\n\t\"businessId\": 1,\n\t\"status\": 1\n}"
 		},
 		{
 			"id": "138336be-ec1a-4ea5-3a7c-3fb8a6bacc27",
@@ -191,6 +218,32 @@
 			"rawModeData": "{\n\t\"name\": \"Member1\",\n\t\"mobile\": \"1212121212\",\n\t\"status\": 1,\n\t\"password\": \"989898\",\n\t\"userId\": 7219\n}"
 		},
 		{
+			"id": "5f9ef353-7c44-9e3c-7795-ad773d69e484",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/favorite",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"data": [],
+			"dataMode": "raw",
+			"name": "POST Delete Bookmark",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1487327607618,
+			"version": 2,
+			"responses": [],
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Marking of Bookmarks\"] = responseBody.has(\"queueId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"rawModeData": "{\n\t\"queueId\": 1,\n\t\"userId\": 7219,\n\t\"businessId\": 1,\n\t\"status\": 0\n}"
+		},
+		{
 			"id": "94257c04-3fe1-1c46-61eb-cf611a7cc5bc",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
 			"url": "http://staging.api.sminq.com:8888/v1/user/member",
@@ -213,6 +266,30 @@
 			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
 			"responses": [],
 			"rawModeData": "{\n\t\"name\": \"Member1\",\n\t\"mobile\": \"1212121212\",\n\t\"userId\": 7219\n}"
+		},
+		{
+			"id": "9f67a269-6b7a-9ccb-ba7d-0b530f5f4ae9",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/favorite?userId=7219",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Retrieval of Bookmarks\"] = responseBody.has(\"businessId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487327731127,
+			"name": "GET All Bookmarks",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"responses": [],
+			"rawModeData": "{\n\t\"queueId\": 1,\n\t\"userId\": 7219,\n\t\"businessId\": 1,\n\t\"status\": 0\n}"
 		},
 		{
 			"id": "a8c5d676-6bb7-48f6-473a-a1d0ce274db3",
