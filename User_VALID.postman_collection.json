@@ -19,7 +19,9 @@
 		"02edf0eb-cda3-c187-8fc5-ea2efc0fb59c",
 		"0c5715b9-23ad-dfb7-9594-e22e0cd88b80",
 		"5f9ef353-7c44-9e3c-7795-ad773d69e484",
-		"9f67a269-6b7a-9ccb-ba7d-0b530f5f4ae9"
+		"9f67a269-6b7a-9ccb-ba7d-0b530f5f4ae9",
+		"3b9e5f6d-b039-8cbd-81c0-a446a373123a",
+		"9eea4fe9-4894-378f-64bb-133d7e0bd422"
 	],
 	"folders": [],
 	"timestamp": 1487308847279,
@@ -170,6 +172,29 @@
 			"rawModeData": "{\n  \"userId\": 7219,\n  \"deviceType\": \"android\"\n}"
 		},
 		{
+			"id": "3b9e5f6d-b039-8cbd-81c0-a446a373123a",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/business/search?cityId=1&categoryId=1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Businesses Retrieval\"] = responseBody.has(\"businessId\");\n\ntests[\"Successful Business Categories Retrieval\"] = responseBody.has(\"businessCategoryId\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487327949118,
+			"name": "GET Business Search Listing",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"responses": []
+		},
+		{
 			"id": "4fc5b513-64ef-0108-4719-9c634c1a1b2f",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
 			"url": "http://staging.api.sminq.com:8888/v1/user/pin/generate",
@@ -266,6 +291,29 @@
 			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
 			"responses": [],
 			"rawModeData": "{\n\t\"name\": \"Member1\",\n\t\"mobile\": \"1212121212\",\n\t\"userId\": 7219\n}"
+		},
+		{
+			"id": "9eea4fe9-4894-378f-64bb-133d7e0bd422",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/business/autocomplete?cityId=1&categoryId=1&searchText=shree",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Search Autocomplete - Businesses Retrieval\"] = responseBody.has(\"Shree\");\n",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487328771742,
+			"name": "GET Search Autocomplete",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"responses": []
 		},
 		{
 			"id": "9f67a269-6b7a-9ccb-ba7d-0b530f5f4ae9",
