@@ -8,7 +8,9 @@
 		"138336be-ec1a-4ea5-3a7c-3fb8a6bacc27",
 		"a8c5d676-6bb7-48f6-473a-a1d0ce274db3",
 		"396f6d6e-f3a7-c9c0-2ca1-0b3558293900",
-		"ac1b1bbd-cdaf-4a7a-9e65-2a8818710e69"
+		"ac1b1bbd-cdaf-4a7a-9e65-2a8818710e69",
+		"ba912ede-41dd-fab6-4443-f74a8bddbe29",
+		"b7afbf4f-0d41-4f2d-4793-9e86d62d8961"
 	],
 	"folders": [],
 	"timestamp": 1487308847279,
@@ -132,6 +134,54 @@
 			"description": "",
 			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
 			"rawModeData": "{\n  \"userId\": 7219,\n  \"deviceType\": \"android\"\n}"
+		},
+		{
+			"id": "b7afbf4f-0d41-4f2d-4793-9e86d62d8961",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/profile/verify",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Profile Update Verification\"] = responseBody.has(\"userVerified\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487325936736,
+			"name": "POST User Profile Update Verify",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"responses": [],
+			"rawModeData": "{\n\t\"userName\": \"Karuna\",\n\t\"userMobile\": \"9096553317\",\n\t\"password\": 989898,\n\t\"userCityId\": 1,\n\t\"userId\": 7219\n}"
+		},
+		{
+			"id": "ba912ede-41dd-fab6-4443-f74a8bddbe29",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/profile/update",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Profile Update\"] = responseBody.has(\"mobile\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487325665988,
+			"name": "POST User Profile Update",
+			"description": "",
+			"collectionId": "9794ca09-19f9-aaec-d43a-3a8d88eaf860",
+			"responses": [],
+			"rawModeData": "{\n\t\"userName\": \"Karuna\",\n\t\"userMobile\": \"9096553317\",\n\t\"userCityId\": 1,\n\t\"userId\": 7219\n}"
 		},
 		{
 			"id": "f4453566-e6c1-f208-ee81-93d320df8d8c",
