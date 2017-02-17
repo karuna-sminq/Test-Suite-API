@@ -10,7 +10,9 @@
 		"fa64df85-d9d1-c991-84b5-0f12b6dadd7b",
 		"b062a827-ea5e-2639-28da-76fd9be05e02",
 		"c31c440d-c53a-de63-81e3-dc2e967271ac",
-		"395e0ffb-6cf9-2764-31cf-b368f6df0f6f"
+		"395e0ffb-6cf9-2764-31cf-b368f6df0f6f",
+		"afb756aa-2f00-6aea-b644-33c5b6e153cf",
+		"ff1df5ba-36d5-7545-ce66-06ebc122879f"
 	],
 	"folders": [],
 	"timestamp": 1487329995034,
@@ -88,6 +90,30 @@
 			"collectionId": "9540192e-0e41-8636-b9f9-3a13cdd9ffd9",
 			"responses": [],
 			"rawModeData": "{\n\t\"queueId\": 1,\n\t\"tokenId\": 22670,\n\t\"billingType\": 0,\n\t\"customerType\": 1,\n\t\"customerId\": 7219,\n\t\"countryId\": 1,\n\t\"charges\": [\n\t\t{\n\t\t\t\"amount\": 10,\n\t\t\t\"billingHead\": \"business\"\n\t\t}\n\t\t]\n}"
+		},
+		{
+			"id": "afb756aa-2f00-6aea-b644-33c5b6e153cf",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/payments/summary",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Payment Summary Success\"] = responseBody.has(\"isPaid\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487337288596,
+			"name": "POST Retrieve User Payments Summary",
+			"description": "",
+			"collectionId": "9540192e-0e41-8636-b9f9-3a13cdd9ffd9",
+			"responses": [],
+			"rawModeData": "{\n\t\"tokenId\": 22670\n}"
 		},
 		{
 			"id": "b062a827-ea5e-2639-28da-76fd9be05e02",
@@ -208,6 +234,30 @@
 			"collectionId": "9540192e-0e41-8636-b9f9-3a13cdd9ffd9",
 			"responses": [],
 			"rawModeData": "{\n\t\"queueId\": 1,\n\t\"tokenId\": 22670,\n\t\"customerType\": 1,\n\t\"customerId\": 7219,\n\t\"countryId\": 1,\n\t\"charges\": [\n\t\t{\n\t\t\t\"amount\": 10,\n\t\t\t\"billingHead\": \"business\"\n\t\t}\n\t\t]\n}"
+		},
+		{
+			"id": "ff1df5ba-36d5-7545-ce66-06ebc122879f",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+			"url": "http://staging.api.sminq.com:8888/v1/user/payments/all?userId=7219",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Payment Txns\"] = responseBody.has(\"userTransactions\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487337408699,
+			"name": "GET All Successful User Transactions",
+			"description": "",
+			"collectionId": "9540192e-0e41-8636-b9f9-3a13cdd9ffd9",
+			"responses": [],
+			"rawModeData": "{\n\t\"tokenId\": 22670\n}"
 		}
 	]
 }
