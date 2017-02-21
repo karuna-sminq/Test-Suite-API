@@ -7,7 +7,9 @@
 		"4bfd40ab-7ba0-ad96-334c-2d9e4bbf46fe",
 		"6955b1d3-c8c3-6d0a-3d0f-02e39322b7ba",
 		"173f1784-b5d2-aa11-61ed-abca284a2280",
-		"6f2390a6-9634-7339-eb53-86cc72cfded1"
+		"6f2390a6-9634-7339-eb53-86cc72cfded1",
+		"e1ec8dfc-7f7b-e414-b3ee-57b022805ec0",
+		"e0f8a985-9142-d8b7-7b64-c959c802d884"
 	],
 	"folders": [],
 	"timestamp": 1486986738191,
@@ -131,6 +133,52 @@
 			"collectionId": "28e451b0-7385-fdee-e983-831fdc3d8f6d",
 			"responses": [],
 			"rawModeData": "{\n\t\"queueId\":1,\n\t\"userId\":7219,\n\t\"joinTime\":\"20:05:00\",\n\t\"joinDate\":\"2017-02-13\",\n\t\"appType\":2,\n\t\"categoryId\": 1,\n\t\"cityId\": 1,\n\t\"countryId\": 1\n}"
+		},
+		{
+			"id": "e0f8a985-9142-d8b7-7b64-c959c802d884",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://staging.api.sminq.com:8888/v1/queue/monetization/charges?queueId=1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Debit Charges threshold\"] = responseBody.has(\"thresholdStartHour\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487683201648,
+			"name": "GET Appointment Debit Charges",
+			"description": "",
+			"collectionId": "28e451b0-7385-fdee-e983-831fdc3d8f6d",
+			"responses": []
+		},
+		{
+			"id": "e1ec8dfc-7f7b-e414-b3ee-57b022805ec0",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://staging.api.sminq.com:8888/v1/appointment/monetization/charges?queueId=70&tokenId=22793&isReschedule=0",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Successful Debit Points Retrieval\"] = responseBody.has(\"debitCharges\");",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "admin",
+				"password": "admin",
+				"saveToRequest": true
+			},
+			"time": 1487683131028,
+			"name": "GET Appointment Debit Points",
+			"description": "",
+			"collectionId": "28e451b0-7385-fdee-e983-831fdc3d8f6d",
+			"responses": []
 		}
 	]
 }
