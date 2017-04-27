@@ -19,7 +19,7 @@
 		{
 			"id": "173f1784-b5d2-aa11-61ed-abca284a2280",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "http://staging.api.sminq.com:8888/v1/user/account/details?userId=7219",
+			"url": "http://staging.api.sminq.com:8080/v1/user/account/details?userId=7219",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -42,7 +42,7 @@
 		{
 			"id": "4bfd40ab-7ba0-ad96-334c-2d9e4bbf46fe",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/user/monetization/charges",
+			"url": "http://staging.api.sminq.com:8080/v1/user/monetization/charges",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -66,7 +66,7 @@
 		{
 			"id": "6955b1d3-c8c3-6d0a-3d0f-02e39322b7ba",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/user/account/summary?userId=7219",
+			"url": "http://staging.api.sminq.com:8080/v1/user/account/summary?userId=7219",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -90,7 +90,7 @@
 		{
 			"id": "6f2390a6-9634-7339-eb53-86cc72cfded1",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "http://staging.api.sminq.com/v1/user/payments/all?userId=7219",
+			"url": "http://staging.api.sminq.com:8080/v1/user/payments/all?userId=7219",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -113,7 +113,7 @@
 		{
 			"id": "89f6955c-4982-68d0-0dd4-e30cf22eb76b",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/user/monetization",
+			"url": "http://staging.api.sminq.com:8080/v1/user/monetization",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -137,7 +137,7 @@
 		{
 			"id": "b841aa3a-d46c-c34f-ecea-27e7cae604f3",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "http://staging.api.sminq.com:8888/v1/user/payment/policy?queueId=1&policyType=all",
+			"url": "http://staging.api.sminq.com:8080/v1/user/payment/policy?queueId=1&policyType=all",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -160,7 +160,7 @@
 		{
 			"id": "e0f8a985-9142-d8b7-7b64-c959c802d884",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "http://staging.api.sminq.com:8888/v1/monetization/debit/charges?queueId=1",
+			"url": "http://staging.api.sminq.com:8080/v1/monetization/debit/charges?queueId=1",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",

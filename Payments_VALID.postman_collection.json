@@ -22,7 +22,7 @@
 		{
 			"id": "1ddb2c7f-a8e1-4d8c-cfb2-699a7704a71e",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/split/payment/charges?queueId=1&countryId=1",
+			"url": "http://staging.api.sminq.com:8080/v1/split/payment/charges?queueId=1&countryId=1",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -46,7 +46,7 @@
 		{
 			"id": "395e0ffb-6cf9-2764-31cf-b368f6df0f6f",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/split/payment/link",
+			"url": "http://staging.api.sminq.com:8080/v1/split/payment/link",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -70,7 +70,7 @@
 		{
 			"id": "89e84770-327d-9930-f6a3-78e7d5e91ba6",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/split/payment/cash",
+			"url": "http://staging.api.sminq.com:8080/v1/split/payment/cash",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -94,7 +94,7 @@
 		{
 			"id": "afb756aa-2f00-6aea-b644-33c5b6e153cf",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/user/payments/summary",
+			"url": "http://staging.api.sminq.com:8080/v1/user/payments/summary",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -118,7 +118,7 @@
 		{
 			"id": "b062a827-ea5e-2639-28da-76fd9be05e02",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/split/payment/verify",
+			"url": "http://staging.api.sminq.com:8080/v1/split/payment/verify",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -142,7 +142,7 @@
 		{
 			"id": "c31c440d-c53a-de63-81e3-dc2e967271ac",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/split/payment/confirm",
+			"url": "http://staging.api.sminq.com:8080/v1/split/payment/confirm",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -166,7 +166,7 @@
 		{
 			"id": "d15416cb-c33a-5485-9490-93df40707bfe",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/business/bill/interim",
+			"url": "http://staging.api.sminq.com:8080/v1/business/bill/interim",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -190,7 +190,7 @@
 		{
 			"id": "e5ad38a5-2f0f-121d-0f3f-7dc207f49b56",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/business/bill/interim?tokenId=22670",
+			"url": "http://staging.api.sminq.com:8080/v1/business/bill/interim?tokenId=22670",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -214,7 +214,7 @@
 		{
 			"id": "fa64df85-d9d1-c991-84b5-0f12b6dadd7b",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/split/payment/create",
+			"url": "http://staging.api.sminq.com:8080/v1/split/payment/create",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -238,7 +238,7 @@
 		{
 			"id": "ff1df5ba-36d5-7545-ce66-06ebc122879f",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/user/payments/all?userId=7219",
+			"url": "http://staging.api.sminq.com:8080/v1/user/payments/all?userId=7219",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",

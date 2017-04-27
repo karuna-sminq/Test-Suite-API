@@ -15,7 +15,7 @@
 		{
 			"id": "30069eee-1316-a0a9-1294-2b686078e4e6",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/schedule/appointment/cancel",
+			"url": "http://staging.api.sminq.com:8080/v1/schedule/appointment/cancel",
 			"pathVariables": {},
 			"preRequestScript": null,
 			"method": "POST",
@@ -41,7 +41,7 @@
 		{
 			"id": "77877da7-5441-019d-af6f-67f52fa128fb",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
-			"url": "http://staging.api.sminq.com:8888/v1/token/schedule/groups?date=2017-02-14&queueId=71",
+			"url": "http://staging.api.sminq.com:8080/v1/token/schedule/groups?date=2017-02-14&queueId=71",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -64,7 +64,7 @@
 		{
 			"id": "85a80601-c694-bc58-789c-8b2e72fbfd2e",
 			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
-			"url": "http://staging.api.sminq.com:8888/v1/schedule/appointment",
+			"url": "http://staging.api.sminq.com:8080/v1/schedule/appointment",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
